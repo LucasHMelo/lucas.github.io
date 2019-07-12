@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {SlimLoadingBarModule} from 'ng2-slim-loading-bar';
-
+import {HttpClientModule } from '@angular/common/http'
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import {ReactiveFormsModule} from '@angular/forms'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FuncAddComponent } from './func-add/func-add.component';
@@ -20,7 +22,9 @@ import { FuncGetComponent } from './func-get/func-get.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SlimLoadingBarModule.forRoot()
+    SlimLoadingBarModule.forRoot(),
+    AngularFontAwesomeModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
