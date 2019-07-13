@@ -4,11 +4,13 @@ import {SlimLoadingBarModule} from 'ng2-slim-loading-bar';
 import {HttpClientModule } from '@angular/common/http'
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import {ReactiveFormsModule} from '@angular/forms'
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FuncAddComponent } from './func-add/func-add.component';
 import { FuncEditComponent } from './func-edit/func-edit.component';
 import { FuncGetComponent } from './func-get/func-get.component';
+import { EmpresaService} from './empresa.service'
 
 
 
@@ -24,9 +26,10 @@ import { FuncGetComponent } from './func-get/func-get.component';
     AppRoutingModule,
     SlimLoadingBarModule.forRoot(),
     AngularFontAwesomeModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [EmpresaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
