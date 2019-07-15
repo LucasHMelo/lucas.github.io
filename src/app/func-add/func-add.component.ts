@@ -1,5 +1,6 @@
 import { Component, OnInit, createPlatformFactory } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { FuncionarioService} from '../funcionario.service';
 
 @Component({
   selector: 'app-func-add',
@@ -10,7 +11,7 @@ export class FuncAddComponent implements OnInit {
   adicionarFuncionarioForm: FormGroup;
 
 
-  constructor(private formbuilder: FormBuilder) {
+  constructor(private formbuilder: FormBuilder, private funcionarioService: FuncionarioService) {
     this.createForm();
   }
     
@@ -21,6 +22,9 @@ export class FuncAddComponent implements OnInit {
         numeroIdentificador: ['', Validators.required]
 
       })
+    }
+    adicionarFuncionario(nomeFuncionario, cargo, numeroIdentificador){
+      this.funcionarioService.adicionarFuncionario(nomeFuncionario, cargo, numeroIdentificador)
     }
 
   ngOnInit() {
