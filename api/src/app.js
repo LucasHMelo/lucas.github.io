@@ -1,14 +1,24 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-//const mongoose = require('mongoose');
+const mongoose = require('mongoose');
 const morgan = require('morgan');
 const cors = require('cors');
-//const path = require('path');
+// const path = require('path');
 
 const app = express();
 
+const localDatabase = require('./config/database');
+
+mongoose.connect(localDatabase.local.localUrl, { useNewUrlParser: true}).then(() =>{
+    console.log(" Conectado com a base");
+
+},
+(err) =>{
+    console.log(" Erroa ao conectar: ${err");
+});
+
 const index = require('./routes/index');
-//const funcionarioRoute = require('./routes/funcionarioRoute');
+// const funcionarioRoute = require('./routes/funcionarioRoute');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
