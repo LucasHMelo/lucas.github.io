@@ -9,16 +9,18 @@ const app = express();
 
 const localDatabase = require('./config/database');
 
-mongoose.connect(localDatabase.local.localUrl, { useNewUrlParser: true}).then(() =>{
-    console.log(" Conectado com a base");
+mongoose.Promise = global.Promise;
 
+mongoose.connect(localDatabase.local.localUrl, { useNewUrlParser: true }).then(() => {
+  console.log(' Conectado com a base');
 },
-(err) =>{
-    console.log(" Erroa ao conectar: ${err");
+(err) => {
+  console.log(' Erroa ao conectar: ${err');
+  process.exit();
 });
 
 const index = require('./routes/index');
-// const funcionarioRoute = require('./routes/funcionarioRoute');
+const funcionarioRoute = require('./routes/funcionario.route');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -27,6 +29,6 @@ app.use(morgan('dev'));
 app.use(cors());
 
 app.use('/api', index);
-// app.use('/funcionario', funcionarioRoute);
+app.use('/funcionario', funcionarioRoute);
 
 module.exports = app;
