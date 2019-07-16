@@ -18,3 +18,14 @@ exports.create = (req, res) => {
       res.status(500).send({ message: 'Erro ao criar um novo funcionario' } || err.message);
     });
 };
+
+exports.findAll = (req, res) => {
+    Funcionario.find()
+      .then((funcionarios) => {
+        res.status(200).send(funcionarios);
+      }).catch((err) => {
+        res.status(500).send({ message: 'Erro ao selecionar todos(as) os(as) Funcionários(as)' || err.message });
+      });
+  };
+
+
