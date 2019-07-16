@@ -78,7 +78,6 @@
 .cartao .lado.frente h1 {
   font-size: 3em;
     color: red;
-    border: 1px solid black;
   padding:  1% 2%;
 }
 .cartao .lado.frente p {
