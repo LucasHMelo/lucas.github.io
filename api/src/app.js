@@ -15,7 +15,7 @@ mongoose.connect(localDatabase.local.localUrl, { useNewUrlParser: true }).then((
   console.log(' Conectado com a base');
 },
 (err) => {
-  console.log(' Erro ao conectar: ${err}');
+  console.log(`Erro ao conectar com a base de Dados...: ${err}`);
   process.exit();
 });
 
