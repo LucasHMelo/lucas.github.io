@@ -12,6 +12,21 @@
      list-style-type:none
  }
 
+.circle {
+  background-color: #aaa;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  position: relative;
+}
+
+.circle img {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
 .cartao {
   position: absolute;
   width: 100%;
