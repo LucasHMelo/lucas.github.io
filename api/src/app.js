@@ -20,7 +20,7 @@ mongoose.connect(localDatabase.local.localUrl, { useNewUrlParser: true }).then((
 });
 
 const index = require('./routes/index');
-const funcionarioRoute = require('./routes/funcionario.route');
+const funcionarioRoute = require('./routes/funcionario.routes');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
